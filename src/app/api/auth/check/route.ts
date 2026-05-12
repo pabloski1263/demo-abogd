@@ -1,34 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getContent } from "@/lib/content";
 import { getSupabaseAdmin } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
-  const authHeader = req.headers.get("authorization") || "none";
+  const admin = getSupabaseAdmin();
 
-  // Direct comparison without verifyAuth
-  const content = await getContent();
-  const storedToken = content.admin.token;
+  // Test 1: Read current data
+  const { data: readData, error: readError } = await admin
+    .from("site_content")
+    .select("data")
+    .eq("id", 1)
+    .single();
 
-  const expected = `Bearer ${storedToken}`;
-  const exactMatch = authHeader === expected;
+  const currentToken = readData?.data?.admin?.token || "MISSING";
+
+  // Test 2: Write a test marker
+  const testId = Date.now().toString(36);
+  const testContent = { ...readData?.data, _test: testId };
+  const { error: writeError } = await admin
+    .from("site_content")
+    .upsert({ id: 1, data: testContent, updated_at: new Date().toISOString() });
+
+  // Test 3: Read back to verify write
+  const { data: verifyData } = await admin
+    .from("site_content")
+    .select("data")
+    .eq("id", 1)
+    .single();
+  const verifyTest = verifyData?.data?._test;
 
   return NextResponse.json({
-    direct: {
-      authHeaderLen: authHeader.length,
-      expectedLen: expected.length,
-      authHeader: authHeader,
-      expected: expected,
-      exactMatch: exactMatch,
-      charByChar: authHeader.split("").map((c, i) => ({
-        i,
-        a: c.charCodeAt(0),
-        e: i < expected.length ? expected.charCodeAt(i) : null,
-      })).filter(x => x.a !== x.e && x.e !== null).slice(0, 5),
-    },
-    contentToken: storedToken || "MISSING",
-    envUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ? "OK" : "MISSING",
-    envKey: process.env.SUPABASE_SERVICE_ROLE_KEY ? "OK" : "MISSING",
+    currentToken,
+    testId,
+    verifyTest,
+    writeError: writeError?.message || null,
+    readError: readError?.message || null,
+    writeWorked: testId === verifyTest,
   });
 }
