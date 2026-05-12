@@ -10,3 +10,4 @@ export async function GET(req: NextRequest) {
   }
   return NextResponse.json({ ok: true });
 }
+// force redeploy Tue May 12 14:00:40 -04 2026
