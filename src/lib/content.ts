@@ -66,6 +66,7 @@ export interface SiteContent {
   admin: {
     email: string;
     password: string;
+    token?: string;
   };
   chat: {
     api_key: string;
@@ -133,6 +134,14 @@ export async function getContent(): Promise<SiteContent> {
 }
 
 export async function saveContent(content: SiteContent): Promise<void> {
+  // Preserve auth token if incoming content doesn't have one
+  if (!content.admin.token) {
+    const existing = await getContent();
+    if (existing.admin.token) {
+      content.admin.token = existing.admin.token;
+    }
+  }
+
   const { error } = await getSupabaseAdmin()
     .from(TABLE)
     .upsert({ id: 1, data: content, updated_at: new Date().toISOString() });

@@ -14,7 +14,7 @@ function generateToken(): string {
 
 export async function verifyAuth(req?: Request): Promise<boolean> {
   const content = await getContent();
-  const storedToken = (content.admin as any).token;
+  const storedToken = content.admin.token;
 
   if (!storedToken) return false;
 
@@ -37,7 +37,7 @@ export async function verifyAuth(req?: Request): Promise<boolean> {
 export async function createSession(): Promise<string> {
   const token = generateToken();
   const content = await getContent();
-  (content.admin as any).token = token;
+  content.admin.token = token;
   await saveContent(content);
 
   const cookieStore = cookies();
@@ -55,7 +55,7 @@ export async function createSession(): Promise<string> {
 export async function destroySession(): Promise<void> {
   try {
     const content = await getContent();
-    delete (content.admin as any).token;
+    delete content.admin.token;
     await saveContent(content);
 
     const cookieStore = cookies();
