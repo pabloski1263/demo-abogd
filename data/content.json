@@ -1,0 +1,253 @@
+{
+  "site": {
+    "name": "ABG Abogados",
+    "subtitle": "ABG Estudio Jurídico",
+    "logo": "",
+    "favicon": "",
+    "legal_name": "ABG Abogados"
+  },
+  "hero": {
+    "title": "Excelencia Jurídica,<br/>Compromiso Absoluto",
+    "subtitle": "Más de 25 años asesorando a empresas y particulares con integridad, precisión y dedicación inquebrantable.",
+    "cta_primary": {
+      "text": "Solicitar Asesoría",
+      "link": "#contacto"
+    },
+    "cta_secondary": {
+      "text": "Conócenos",
+      "link": "#nosotros"
+    },
+    "background_image": "/images/hero-bg.jpg",
+    "cards": [
+      {
+        "id": "card1",
+        "title": "Derecho Corporativo",
+        "description": "Estructuración societaria, gobierno corporativo y operaciones de M&A con excelencia técnica.",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80"
+      },
+      {
+        "id": "card2",
+        "title": "Derecho Tributario",
+        "description": "Planificación fiscal estratégica y defensa ante el SII con soluciones innovadoras.",
+        "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80"
+      },
+      {
+        "id": "card3",
+        "title": "Derecho Laboral",
+        "description": "Asesoría integral en relaciones laborales, negociación colectiva y litigios laborales.",
+        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&q=80"
+      },
+      {
+        "id": "card4",
+        "title": "Derecho Civil",
+        "description": "Litigios civiles de alta complejidad, contratos y responsabilidad civil profesional.",
+        "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80"
+      },
+      {
+        "id": "card5",
+        "title": "Derecho Comercial",
+        "description": "Contratos comerciales, propiedad intelectual, competencia desleal y arbitraje.",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+      }
+    ]
+  },
+  "services": {
+    "title": "Áreas de Práctica",
+    "subtitle": "Ofrecemos asesoría integral en múltiples áreas del derecho, con un equipo de profesionales altamente especializados.",
+    "items": [
+      {
+        "id": "corp",
+        "title": "Derecho Corporativo",
+        "description": "Asesoramos en constitución de sociedades, gobiernos corporativos, fusiones y adquisiciones, y reestructuraciones empresariales.",
+        "icon": "building"
+      },
+      {
+        "id": "tax",
+        "title": "Derecho Tributario",
+        "description": "Planificación tributaria, defensa fiscal, cumplimiento normativo y litigios ante el Servicio de Impuestos Internos.",
+        "icon": "chart"
+      },
+      {
+        "id": "labor",
+        "title": "Derecho Laboral",
+        "description": "Asesoría en relaciones laborales, negociaciones colectivas, despidos, accidentes del trabajo y cumplimiento normativo.",
+        "icon": "users"
+      },
+      {
+        "id": "civil",
+        "title": "Derecho Civil",
+        "description": "Contratos, responsabilidad civil, arrendamientos, propiedad horizontal y litigios civiles de alta complejidad.",
+        "icon": "scale"
+      },
+      {
+        "id": "commercial",
+        "title": "Derecho Comercial",
+        "description": "Contratos comerciales, distribución, agencia, competencia desleal, propiedad intelectual y arbitraje comercial.",
+        "icon": "briefcase"
+      },
+      {
+        "id": "regulatory",
+        "title": "Derecho Regulatorio",
+        "description": "Cumplimiento normativo, permisos sectoriales, medio ambiente, minería, energía y recursos naturales.",
+        "icon": "shield"
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "description": "ABG Estudio Jurídico nació en 1998 con la visión de ofrecer asesoría legal de excelencia, combinando el rigor técnico con una comprensión profunda de las necesidades de cada cliente. Desde entonces, hemos crecido hasta convertirnos en un estudio de referencia, manteniendo siempre nuestro compromiso con la calidad, la ética y la cercanía.",
+    "mission": "Proporcionar asesoría jurídica integral de la más alta calidad, anticipándonos a las necesidades de nuestros clientes y ofreciendo soluciones innovadoras y efectivas.",
+    "vision": "Ser reconocidos como un estudio jurídico líder en Chile, destacando por nuestra excelencia técnica, compromiso ético y cercanía con cada cliente.",
+    "image": "/images/about.jpg",
+    "values": [
+      {
+        "title": "Excelencia",
+        "description": "Buscamos la más alta calidad en cada servicio que prestamos."
+      },
+      {
+        "title": "Integridad",
+        "description": "Actuamos con honestidad, transparencia y ética inquebrantable."
+      },
+      {
+        "title": "Cercanía",
+        "description": "Entendemos las necesidades únicas de cada cliente."
+      },
+      {
+        "title": "Innovación",
+        "description": "Nos adaptamos constantemente a los cambios legales y tecnológicos."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      {
+        "value": 25,
+        "suffix": "+",
+        "label": "Años de Experiencia"
+      },
+      {
+        "value": 5000,
+        "suffix": "+",
+        "label": "Casos Exitosos"
+      },
+      {
+        "value": 1200,
+        "suffix": "+",
+        "label": "Clientes Activos"
+      },
+      {
+        "value": 45,
+        "suffix": "+",
+        "label": "Profesionales"
+      }
+    ]
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Conoce a los profesionales que hacen de ABG un estudio de primer nivel.",
+    "members": [
+      {
+        "id": "partner1",
+        "name": "Andrea Bustos G.",
+        "role": "Socio Fundador",
+        "description": "Especialista en Derecho Corporativo y Tributario. Más de 30 años de experiencia asesorando a empresas del sector financiero e industrial.",
+        "image": "/api/images/1778596646030-j8fa2r.jpg"
+      },
+      {
+        "id": "partner2",
+        "name": "María Fernanda García",
+        "role": "Socia - Derecho Laboral",
+        "description": "Experta en relaciones laborales y negociación colectiva. Ha liderado equipos en las negociaciones más complejas del país.",
+        "image": ""
+      },
+      {
+        "id": "partner3",
+        "name": "Felipe Errázuriz M.",
+        "role": "Socio - Derecho Civil",
+        "description": "Litigante con vasta experiencia en juicios civiles de alta complejidad y arbitrajes nacionales e internacionales.",
+        "image": ""
+      },
+      {
+        "id": "partner4",
+        "name": "Francisca Undurraga P.",
+        "role": "Socia - Derecho Comercial",
+        "description": "Asesora en contratos comerciales, propiedad intelectual y competencia. Ha trabajado en las principales transacciones del mercado.",
+        "image": ""
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "items": [
+      {
+        "text": "ABG nos ha acompañado en cada etapa de crecimiento de nuestra empresa. Su asesoría en materia corporativa y tributaria ha sido fundamental para nuestro éxito.",
+        "author": "Gerente General",
+        "company": "Grupo Industrial del Sur"
+      },
+      {
+        "text": "Profesionalismo, cercanía y resultados. El equipo de ABG superó todas nuestras expectativas en un litigio complejo que parecía imposible de ganar.",
+        "author": "Director Legal",
+        "company": "Constructora del Pacífico"
+      },
+      {
+        "text": "La asesoría laboral de ABG nos permitió modernizar nuestras prácticas de recursos humanos con total seguridad jurídica.",
+        "author": "Gerente de RR.HH.",
+        "company": "Empresa de Servicios Ltda."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Estamos disponibles para atender sus consultas. Contáctenos y le responderemos a la brevedad.",
+    "address": "Av. Apoquindo 4800, Piso 12, Las Condes, Santiago",
+    "phone": "+56 2 2234 567899",
+    "email": "contacto@abgabogados.cl",
+    "hours": "Lunes a Viernes: 9:00 a 18:00 hrs",
+    "whatsapp": "+56912345678",
+    "map_lat": -33.4163,
+    "map_lng": -70.5766
+  },
+  "clients": {
+    "title": "Confían en Nosotros",
+    "logos": [
+      {
+        "name": "Cliente 1",
+        "logo": ""
+      },
+      {
+        "name": "Cliente 2",
+        "logo": ""
+      },
+      {
+        "name": "Cliente 3",
+        "logo": ""
+      },
+      {
+        "name": "Cliente 4",
+        "logo": ""
+      },
+      {
+        "name": "Cliente 5",
+        "logo": ""
+      }
+    ]
+  },
+  "footer": {
+    "description": "ABG Estudio Jurídico — Asesoría legal de excelencia con más de 25 años de experiencia en el mercado chileno.",
+    "social": {
+      "linkedin": "https://linkedin.com/company/abgabogados",
+      "twitter": "https://twitter.com/abgabogados"
+    }
+  },
+  "admin": {
+    "email": "admin@abgabogados.cl",
+    "password": "abg2025",
+    "token": "h7vnouc5pgn5bth2fpmbfseo5tot7lfhiru7pry6"
+  },
+  "chat": {
+    "api_key": "",
+    "model": "gemini-2.5-flash-lite",
+    "enabled": true,
+    "greeting": "¡Hola! Soy el asistente virtual de ABG Abogados. ¿En qué puedo ayudarte hoy? Puedo contarte sobre nuestros servicios legales, el equipo, nuestra experiencia o agendar una consulta."
+  }
+}
