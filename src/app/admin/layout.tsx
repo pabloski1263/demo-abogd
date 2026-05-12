@@ -15,7 +15,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       setChecking(false);
       return;
     }
-    adminFetch("/api/content")
+    adminFetch("/api/auth/check")
       .then((r) => {
         if (r.status === 401) {
           router.push("/admin/login");
@@ -24,6 +24,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       .catch(() => router.push("/admin/login"))
       .finally(() => setChecking(false));
   }, [pathname, router]);
+
+  const handleLogout = async () => {
+    sessionStorage.removeItem("abg_token");
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.push("/admin/login");
+  };
 
   if (checking) {
     return (
@@ -40,7 +46,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <div className="min-h-screen bg-navy-950 flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-navy-900 border-r border-white/5 p-6 hidden lg:block">
+      <aside className="w-64 bg-navy-900 border-r border-white/5 p-6 hidden lg:flex flex-col">
         <a href="/admin" className="flex items-center gap-3 mb-8">
           <div className="w-8 h-8 bg-gold-500 rounded flex items-center justify-center">
             <span className="text-navy-900 font-serif font-bold text-xs">ABG</span>
@@ -51,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
         </a>
 
-        <nav className="space-y-1">
+        <nav className="space-y-1 flex-1">
           {[
             { label: "Dashboard", href: "/admin" },
             { label: "Sitio", href: "/admin/site" },
@@ -77,7 +83,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           ))}
         </nav>
 
-        <div className="mt-auto pt-8">
+        <div className="pt-4 space-y-2 border-t border-white/5">
           <a
             href="/"
             target="_blank"
@@ -85,6 +91,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           >
             Ver sitio →
           </a>
+          <button
+            onClick={handleLogout}
+            className="w-full text-center px-4 py-2 border border-red-500/20 rounded-lg text-xs text-red-400 hover:bg-red-500/10 hover:border-red-500/50 transition-all"
+          >
+            Cerrar Sesión
+          </button>
         </div>
       </aside>
 
@@ -102,6 +114,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <a href="/" target="_blank" className="px-3 py-1.5 border border-white/10 rounded text-xs text-gray-400">
               Sitio
             </a>
+            <button
+              onClick={handleLogout}
+              className="px-3 py-1.5 border border-red-500/20 rounded text-xs text-red-400"
+            >
+              Salir
+            </button>
           </div>
         </div>
 
