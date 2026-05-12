@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
 export async function POST(req: NextRequest) {
   try {
@@ -15,7 +15,8 @@ export async function POST(req: NextRequest) {
     const ext = file.name.split(".").pop() || "jpg";
     const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
 
-    const { error } = await supabaseAdmin.storage
+    const admin = getSupabaseAdmin();
+    const { error } = await admin.storage
       .from("images")
       .upload(filename, buffer, {
         contentType: file.type,
@@ -26,7 +27,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    const { data: urlData } = supabaseAdmin.storage
+    const { data: urlData } = admin.storage
       .from("images")
       .getPublicUrl(filename);
 

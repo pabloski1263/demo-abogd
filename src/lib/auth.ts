@@ -43,7 +43,7 @@ export async function createSession(): Promise<string> {
   const cookieStore = cookies();
   cookieStore.set(AUTH_COOKIE, token, {
     httpOnly: true,
-    secure: false,
+    secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24 * 7,
@@ -61,7 +61,7 @@ export async function destroySession(): Promise<void> {
     const cookieStore = cookies();
     cookieStore.set(AUTH_COOKIE, "", {
       httpOnly: true,
-      secure: false,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       path: "/",
       maxAge: 0,

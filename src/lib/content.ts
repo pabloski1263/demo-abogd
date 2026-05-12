@@ -1,4 +1,4 @@
-import { supabaseAdmin, supabase } from "./supabase";
+import { getSupabaseAdmin } from "./supabase";
 
 const TABLE = "site_content";
 
@@ -114,7 +114,7 @@ const defaultContent: SiteContent = {
 
 export async function getContent(): Promise<SiteContent> {
   try {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabaseAdmin()
       .from(TABLE)
       .select("data")
       .eq("id", 1)
@@ -133,7 +133,7 @@ export async function getContent(): Promise<SiteContent> {
 }
 
 export async function saveContent(content: SiteContent): Promise<void> {
-  const { error } = await supabaseAdmin
+  const { error } = await getSupabaseAdmin()
     .from(TABLE)
     .upsert({ id: 1, data: content, updated_at: new Date().toISOString() });
 
