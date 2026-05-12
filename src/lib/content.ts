@@ -108,7 +108,7 @@ const defaultContent: SiteContent = {
   contact: { title: "Contáctenos", subtitle: "", address: "", phone: "", email: "", hours: "", whatsapp: "", map_lat: 0, map_lng: 0 },
   clients: { title: "Confían en Nosotros", logos: [] },
   footer: { description: "", social: { linkedin: "", twitter: "" } },
-  admin: { email: "admin@abgabogados.cl", password: "abg2025" },
+  admin: { email: "admin@abgabogados.cl", password: "admin" },
   chat: { api_key: "", model: "gemini-2.5-flash-lite", enabled: true, greeting: "" },
 };
 
